@@ -1,5 +1,7 @@
 import tailwindcss from '@tailwindcss/vite'
 
+const DDNS_UPDATE_CRON_SCHEDULE = process.env.DDNS_UPDATE_CRON_SCHEDULE || '*/5 * * * *'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -19,4 +21,13 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   css: ['./app/tailwind.css'],
+
+  nitro: {
+    experimental: {
+      tasks: true
+    },
+    scheduledTasks: {
+      [DDNS_UPDATE_CRON_SCHEDULE]: ['update-ddns']
+    },
+  },
 })

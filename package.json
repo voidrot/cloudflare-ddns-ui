@@ -12,6 +12,7 @@
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
     "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
     "lint": "eslint --fix"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "@unhead/vue": "^2.1.2",
     "better-auth": "^1.4.18",
+    "cloudflare": "^5.2.0",
     "daisyui": "^5.5.14",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.45.1",
