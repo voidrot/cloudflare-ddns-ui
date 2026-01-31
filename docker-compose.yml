@@ -1,0 +1,13 @@
+services:
+  app:
+    image: ghcr.io/voidrot/cloudflare-ddns-ui:latest
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+
+    env_file:
+      - .env
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
