@@ -7,9 +7,16 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "auth:generate": "npx @better-auth/cli generate --config ./server/lib/auth.ts --output ./server/database/schema/auth-schema.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "lint": "eslint --fix"
   },
   "dependencies": {
+    "@libsql/client": "^0.17.0",
     "@nuxt/a11y": "^1.0.0-alpha.1",
     "@nuxt/eslint": "^1.13.0",
     "@nuxt/fonts": "^0.13.0",
@@ -17,10 +24,21 @@
     "@nuxt/icon": "^2.2.1",
     "@nuxt/scripts": "^0.13.2",
     "@nuxt/test-utils": "^3.23.0",
+    "@tailwindcss/vite": "^4.1.18",
     "@unhead/vue": "^2.1.2",
+    "better-auth": "^1.4.18",
+    "cloudflare": "^5.2.0",
+    "daisyui": "^5.5.14",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.45.1",
     "eslint": "^9.39.2",
     "nuxt": "^4.3.0",
+    "tailwindcss": "^4.1.18",
     "vue": "^3.5.27",
     "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.8",
+    "tsx": "^4.21.0"
   }
 }

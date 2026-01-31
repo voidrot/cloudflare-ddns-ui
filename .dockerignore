@@ -1,0 +1,15 @@
+.git
+.github
+.vscode
+node_modules
+.nuxt
+.output
+.env
+.env.*
+*.log
+coverage
+*.md
+
+# OS
+.DS_Store
+Thumbs.db
