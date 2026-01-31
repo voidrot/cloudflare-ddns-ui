@@ -13,16 +13,19 @@ export const auth = betterAuth({
   }),
   emailAndPassword: {
     enabled: true,
+    disableSignUp: process.env.BETTER_AUTH_DISABLE_SIGNUP === 'true',
   },
   socialProviders: {
     github: {
         clientId: process.env.GITHUB_CLIENT_ID as string || 'bogus-client-id',
         clientSecret: process.env.GITHUB_CLIENT_SECRET as string || 'bogus-client-secret',
+        disableSignUp: process.env.BETTER_AUTH_DISABLE_SIGNUP === 'true',
       },
       gitlab: {
         clientId: process.env.GITLAB_CLIENT_ID as string || 'bogus-client-id',
         clientSecret: process.env.GITLAB_CLIENT_SECRET as string || 'bogus-client-secret',
         issuer: process.env.GITLAB_ISSUER as string || 'https://gitlab.com',
+        disableSignUp: process.env.BETTER_AUTH_DISABLE_SIGNUP === 'true',
       }
   },
   plugins: [
