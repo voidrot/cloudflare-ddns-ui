@@ -26,6 +26,8 @@ ENV HOST=0.0.0.0
 ENV PORT=3000
 
 COPY --from=build /app/.output ./.output
+COPY --from=build /app/entrypoint.sh /entrypoint
+RUN chmod +x /entrypoint
 
 USER node
 EXPOSE 3000
@@ -33,6 +35,5 @@ EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 	CMD wget -q -O /dev/null http://127.0.0.1:3000/_health || exit 1
 
-
-
-CMD ["node", ".output/server/index.mjs"]
+ENTRYPOINT ["/entrypoint"]
+CMD [ "node", "/app/.output/server/index.mjs" ]

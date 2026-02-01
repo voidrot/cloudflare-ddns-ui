@@ -25,3 +25,6 @@ logs
 
 
 *.db
+
+# Sentry Config File
+.env.sentry-build-plugin
